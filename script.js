@@ -37,8 +37,10 @@ function updateLiveTime() {
   });
 
   document.getElementById(
-    "liveTime"
-  ).textContent = `| ${day}, ${date} | ${time}`;
+    "livedate"
+  ).textContent = `📅 ${day} | ${date} `;
+
+  document.getElementById("liveTime").textContent=`🕒 ${time}`
 }
 
 updateLiveTime();
