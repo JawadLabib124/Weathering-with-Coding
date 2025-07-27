@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 2s ease;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  width: 320px;
+  animation: popIn 1s ease;
+  transition: all 0.3s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.location {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  animation: slideDown 1.2s ease;
+}
+
+.live-time {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.weather-item {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+  border-radius: 12px;
+  animation: fadeIn 1s ease;
+  transition: transform 0.3s;
+}
+
+.weather-item:hover {
+  transform: scale(1.05);
+}
+
+.weather-item h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #f4f4f4;
+}
+
+.weather-item p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Animations */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  } 
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 400px) {
+  .weather-card {
+    width: 90%;
+  }
+}
+#date-time-box {
+  margin: 20px auto;
+  padding: 12px 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: blink 2s infinite;
+  width: fit-content;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+}
+
+#liveTime {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
